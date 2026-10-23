@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCTIC — Official Discord Community</title>
+    
+    <!-- CSS External & Iconite -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Particule Canvas Fundal -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Preloader -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <h2>Se încarcă <span class="brand-text"><i class="fa-solid fa-snowflake"></i> ARCTIC</span>...</h2>
+    </div>
+
+    <!-- HEADER / NAVIGAȚIE -->
+    <header>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/Alexandru2898/Logo-Website/fe83d5c9a5d7bcfa8a53c1a6120095128d19cfa7/C681F9A7-655D-4A7A-BFD3-E731340EFA37.png" alt="Arctic Logo">
+            <span>ARCTIC</span>
+        </div>
+        <nav>
+            <a href="#hero" class="active">Acasă</a>
+            <a href="#about">Despre</a>
+            <a href="#features">Beneficii</a>
+            <a href="#rules">Reguli</a>
+            <a href="#staff">Staff</a>
+            <a href="#staff-apply">Aplicații Staff</a>
+            <a href="#suport">Suport & Unban</a>
+            <a href="#events">Evenimente</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <div class="header-actions">
+            <button id="open-config" title="Setări Administrație Webhooks"><i class="fa-solid fa-lock"></i></button>
+            <button id="audio-toggle" title="Mute/Unmute Ambient"><i class="fa-solid fa-volume-xmark"></i></button>
+            <a href="https://discord.gg/FYpwjmJP7p" target="_blank" class="btn-join-nav"><i class="fa-brands fa-discord"></i> Connect</a>
+        </div>
+    </header>
+
+    <!-- Audio Ambient -->
+    <audio id="ambient-audio" loop src="https://www.youtube.com/watch?v=_bOPI5e0oUA"></audio>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="https://raw.githubusercontent.com/Alexandru2898/Logo-Website/fe83d5c9a5d7bcfa8a53c1a6120095128d19cfa7/C681F9A7-655D-4A7A-BFD3-E731340EFA37.png" alt="Arctic Main Logo" class="hero-logo-img">
+            <h1 class="glitch-title">ARCTIC <span class="ice-glow">COMMUNITY</span></h1>
+            <p class="hero-subtitle">Tărâmul înghețat al distracției, unde comunitatea se întâlnește cu pasiunea și evenimentele epice.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <i class="fa-solid fa-users"></i>
+                    <span id="total-members">100+</span>
+                    <p>Membri Totali</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-signal"></i>
+                    <span id="online-members" class="online-indicator">🟢 50 Online</span>
+                    <p>Membri Activi</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span id="boost-count">0</span>
+                    <p>Server Boosts</p>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="https://discord.gg/FYpwjmJP7p" target="_blank" class="btn-primary glow-button"><i class="fa-brands fa-discord"></i> Alătură-te acum</a>
+                <a href="#about" class="btn-secondary">De ce să te alături?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. DESPRE NOI & WIDGET DISCORD -->
+    <section id="about" class="container">
+        <div class="section-header">
+            <h2>Despre <span class="brand-text">Arctic</span></h2>
+            <p>🐻‍❄️ Arctic — mai mult decât un simplu server de Discord.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text glass-card">
+                <h3>🧊 Locul unde comunitatea contează</h3>
+                <p>Arctic este o comunitate românească creată pentru oameni care vor să aibă un loc activ, bine organizat și plăcut în care să-și petreacă timpul. Fie că intri pentru conversații, gaming, voice chat-uri sau pur și simplu pentru a cunoaște persoane noi, aici găsești mereu ceva de făcut.</p>
+                <p>Pe server te așteaptă o comunitate în continuă dezvoltare, canale pentru discuții, voice chat-uri active, activități, evenimente și giveaway-uri. Punem accent pe o atmosferă relaxată, respect între membri și o experiență cât mai bine pusă la punct.</p>
+                <p>❤️ Nu trebuie să fii aici de la început ca să faci parte din comunitate. <strong>Intră, cunoaște oamenii, implică-te și fă-ți propriul loc în Arctic.</strong></p>
+            </div>
+            
+            <div class="widget-container glass-card">
+                <h3>Status Live Discord 💬</h3>
+                <iframe src="https://discord.com/widget?id=1479183870892052662&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CE OFERIM (BENEFICII) -->
+    <section id="features" class="container">
+        <div class="section-header">
+            <h2>Ce <span class="brand-text">Oferim</span></h2>
+            <p>Beneficiile exclusive de care te bucuri în cadrul serverului Arctic.</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card glass-card">
+                <i class="fa-solid fa-gamepad card-icon"></i>
+                <h3>Gaming & Tournaments</h3>
+                <p>Camere dedicate pentru jocuri populare, căutare de parteneri de joc și turnee cu premii.</p>
+            </div>
+            <div class="card glass-card">
+                <i class="fa-solid fa-headset card-icon"></i>
+                <h3>Support 24/7</h3>
+                <p>Echipa noastră de staff este mereu disponibilă pentru a răspunde la întrebări sau sesizări.</p>
+            </div>
+            <div class="card glass-card">
+                <i class="fa-solid fa-robot card-icon"></i>
+                <h3>Bots Custom Unici</h3>
+                <p>Sisteme avansate de economie, nivele, securitate și divertisment făcute special pentru noi.</p>
+            </div>
+            <div class="card glass-card">
+                <i class="fa-solid fa-gift card-icon"></i>
+                <h3>Giveaway-uri Lunare</h3>
+                <p>Premii în jocuri, Nitro-uri, roluri VIP și beneficii speciale oferite activilor comunității.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. REGULI -->
+    <section id="rules" class="container">
+        <div class="section-header">
+            <h2>Regulament <span class="brand-text">Oficial</span></h2>
+            <p>Respectarea acestor reguli asigură un mediu sigur și plăcut pentru toți membrii Arctic.</p>
+        </div>
+        
+        <div class="rules-grid-detailed">
+            <div class="rule-category-card glass-card">
+                <div class="rule-cat-header">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>1. Regulament General</h3>
+                </div>
+                <ul>
+                    <li>Păstrați respectul față de toți membrii serverului. Glumele sunt permise, atât timp cât nu devin atacuri personale.</li>
+                    <li><strong>Doxxing-ul, expose-ul, swatting-ul</strong> sau divulgarea informațiilor personale sunt strict interzise.</li>
+                    <li>Dovezile false, manipularea dovezilor și posthunt-ul sunt interzise.</li>
+                    <li>Încercarea de a evita o sancțiune poate duce la o sancțiune mai gravă.</li>
+                </ul>
+            </div>
+
+            <div class="rule-category-card glass-card">
+                <div class="rule-cat-header">
+                    <i class="fa-solid fa-comments"></i>
+                    <h3>2. Regulament Chat</h3>
+                </div>
+                <ul>
+                    <li>Fără spam, flood sau mesaje repetitive. Fără provocări, insulte sau certuri intenționate.</li>
+                    <li>Promovarea altor servere fără permisiune poate duce la ban.</li>
+                    <li>Link-urile suspecte, scam-urile și phishing-ul sunt strict interzise.</li>
+                    <li>Fără conținut NSFW, gore sau deranjant.</li>
+                </ul>
+            </div>
+
+            <div class="rule-category-card glass-card">
+                <div class="rule-cat-header">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                    <h3>3. Regulament Voice</h3>
+                </div>
+                <ul>
+                    <li>Fără soundpad, soundspam, earrape sau muzică deranjantă pe canalele publice.</li>
+                    <li>Fără țipete sau microfon folosit intenționat pentru a deranja ceilalți membri.</li>
+                    <li>Fără trolling sau întreruperea constantă a conversațiilor.</li>
+                </ul>
+            </div>
+
+            <div class="rule-category-card glass-card">
+                <div class="rule-cat-header">
+                    <i class="fa-solid fa-ticket"></i>
+                    <h3>4. Tickete & Raporturi</h3>
+                </div>
+                <ul>
+                    <li>Deschideți un ticket doar pentru un motiv real. Nu deschideți mai multe tickete pentru aceeași problemă.</li>
+                    <li>Pentru reclamații, prezentați dovezi clare și complete.</li>
+                    <li>Nu folosiți sistemul de tickete pentru trolling sau spam.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. STAFF -->
+    <section id="staff" class="container">
+        <div class="section-header">
+            <h2>Echipa <span class="brand-text">Staff</span></h2>
+            <p>Persoanele care mențin comunitatea Arctic sigură și distractivă.</p>
+        </div>
+        <div class="staff-grid">
+            <div class="staff-card owner glass-card">
+                <div class="staff-avatar">
+                    <img src="https://cdn.discordapp.com/avatars/1260646161946120207/a_26cb6736bf8c27d7be2f83b6128e2617.webp?size=1024&animated=true" alt="D4rk - Owner">
+                </div>
+                <h3>D4rk</h3>
+                <span class="role-badge badge-owner">Owner / Fondator</span>
+                <p>Responsabil cu viziunea, dezvoltarea tehnică și administrarea generală a proiectului Arctic.</p>
+            </div>
+
+            <div class="staff-card owner glass-card">
+                <div class="staff-avatar">
+                    <img src="https://cdn.discordapp.com/avatars/952181500479168533/13ee649aeb7df9179d2eb9f968ad7647.webp?size=1024" alt="DanyDen - Co-Founder">
+                </div>
+                <h3>DanyDen</h3>
+                <span class="role-badge badge-owner">CO-FOUNDER / OWNER</span>
+                <p>Supervizează dezvoltarea comunității, gestiunea proiectelor și coordonarea echipei administrative.</p>
+            </div>
+
+            <div class="staff-card owner glass-card">
+                <div class="staff-avatar">
+                    <img src="https://cdn.discordapp.com/avatars/1069522533973508106/bd79c421f5ed41171cfa24baf627d7f1.webp?size=1024" alt="Andrew - Leader">
+                </div>
+                <h3>Andrew</h3>
+                <span class="role-badge badge-owner">CO-FOUNDER / LEADER</span>
+                <p>Căluiește activitatea zilnică a comunității, coordonează echipa de moderare și asigură ordinea pe server.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. STAFF APPLY -->
+    <section id="staff-apply" class="container">
+        <div class="section-header">
+            <h2>STAFF <span class="brand-text">APPLY</span></h2>
+            <p>Alătură-te echipei noastre de administrare! Completează formularul de mai jos.</p>
+        </div>
+
+        <div class="apply-wrapper">
+            <div class="info-box-custom">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>
+                    <strong>INFORMAȚIE IMPORTANTĂ:</strong> Dacă cererea ta este acceptată, trebuie să intri pe server-ul nostru de Staff pentru susținerea testelor staff și să faci un <strong>screenshot (dovadă)</strong> că ai fost acceptat!
+                </div>
+            </div>
+
+            <form id="staffApplyForm" class="custom-form">
+                
+                <div class="form-block glass-card">
+                    <div class="block-title"><i class="fa-brands fa-discord"></i> Identificare Discord</div>
+                    <div class="form-group">
+                        <label>ID-ul tău de Discord (Obligatoriu pentru Tag & Acordare Rol Automat):</label>
+                        <input type="text" id="st_discord_id" class="form-control" required placeholder="Ex: 38219482910481920 (Click dreapta pe profilul tău de Discord -> Copy User ID)">
+                    </div>
+                </div>
+
+                <div class="form-block glass-card">
+                    <div class="block-title"><i class="fa-solid fa-user-gear"></i> 1. Date Informative</div>
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label>1. Câți ani ai?</label>
+                            <input type="number" id="st_q1" class="form-control" required placeholder="Ex: 16">
+                        </div>
+                        <div class="form-group">
+                            <label>2. În ce an te-ai născut?</label>
+                            <input type="number" id="st_q2" class="form-control" required placeholder="Ex: 2008">
+                        </div>
+                        <div class="form-group">
+                            <label>3. De cât timp ești pe server-ul nostru?</label>
+                            <input type="text" id="st_q3" class="form-control" required placeholder="Ex: 5 luni">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-block glass-card">
+                    <div class="block-title"><i class="fa-solid fa-briefcase"></i> 2. Experiență & Disponibilitate</div>
+                    <div class="form-group">
+                        <label>4. AI mai fost staff pe alte servere de discord? Dacă da, pentru cât timp și ce grad ai avut?</label>
+                        <textarea id="st_q4" class="form-control" required placeholder="Ex: Da, am fost Moderator timp de 6 luni pe serverul..."></textarea>
+                    </div>
+
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label>5. Cât timp poți fi activ zilnic?</label>
+                            <input type="text" id="st_q5" class="form-control" required placeholder="Ex: 4-6 ore pe zi">
+                        </div>
+                        <div class="form-group">
+                            <label>6. Vei fi mai activ/a pe voice, sau pe chat?</label>
+                            <select id="st_q6" class="form-control" required>
+                                <option value="Pe Voice">Pe Voice</option>
+                                <option value="Pe Chat">Pe Chat</option>
+                                <option value="Echilibrat (Atât pe voice cât și pe chat)">Echilibrat (Ambele)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>7. Ai citit regulamentul staff?</label>
+                            <input type="text" id="st_q7" class="form-control" required placeholder="Scrie răspunsul tău aici...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-block glass-card">
+                    <div class="block-title"><i class="fa-solid fa-scale-balanced"></i> 3. Atitudine & Conștientizare</div>
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label>8. Te enervezi repede?</label>
+                            <select id="st_q8" class="form-control" required>
+                                <option value="Nu, sunt o persoană calmă">Nu, sunt o persoană calmă</option>
+                                <option value="Uneori, depinde de situație">Uneori, depinde de situație</option>
+                                <option value="Da">Da</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>9. Ai fost sancționat/ă vreodată pe server-ul nostru?</label>
+                            <input type="text" id="st_q9" class="form-control" required placeholder="Ex: Nu / Da (Warn pt spam)">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>10. Ești conștient/ă că trebuie să fii indulgent/ă (să nu dai mute pentru orice înjurătură / caterincă) și să avertizezi înainte să sancționezi?</label>
+                        <select id="st_q10" class="form-control" required>
+                            <option value="Da, sunt complet conștient/ă">Da, sunt complet conștient/ă</option>
+                            <option value="Nu">Nu</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>11. Ești conștient/ă că nu trebuie să tratezi membrii cu superioritate și că trebuie să fii prietenos?</label>
+                        <select id="st_q11" class="form-control" required>
+                            <option value="Da, respect membrii comunității">Da, absolut</option>
+                            <option value="Nu">Nu</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-block glass-card">
+                    <div class="block-title"><i class="fa-solid fa-id-card"></i> 4. Prezentare Personală</div>
+                    <div class="form-group">
+                        <label>12. În final, descrie-te în câteva cuvinte.</label>
+                        <textarea id="st_q12" class="form-control" required placeholder="Spune-ne câte ceva despre tine, pasiunile tale și de ce dorești în echipa ARCTIC..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary glow-button btn-full">
+                        <i class="fa-solid fa-paper-plane"></i> Trimite Aplicația Staff
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- 7. SUPORT & UNBAN / UNBLACKLIST -->
+    <section id="suport" class="container">
+        <div class="section-header">
+            <h2>Centru <span class="brand-text">Suport</span></h2>
+            <p>Trimite o contestație oficială direct pe canalele noastre de evaluare.</p>
+        </div>
+
+        <div class="apply-wrapper">
+            <div class="tab-buttons">
+                <button class="tab-btn active" id="unbanTabBtn" onclick="switchSupportTab('unban')">
+                    <i class="fa-solid fa-unlock"></i> Cerere Unban
+                </button>
+                <button class="tab-btn" id="unblTabBtn" onclick="switchSupportTab('unblacklist')">
+                    <i class="fa-solid fa-shield-cat"></i> Cerere Unblacklist
+                </button>
+            </div>
+
+            <!-- UNBAN FORM -->
+            <form id="unbanForm" class="custom-form glass-card">
+                <div class="block-title"><i class="fa-solid fa-user-slash"></i> Formular Cerere Unban</div>
+                
+                <div class="form-group">
+                    <label>1. Care este username-ul tău?</label>
+                    <input type="text" id="ub_q1" class="form-control" required placeholder="Ex: Popescu#1234 sau popescu dar de preferat un id">
+                </div>
+                <div class="form-group">
+                    <label>2. Din ce cauză ai fost banat?</label>
+                    <textarea id="ub_q2" class="form-control" required placeholder="Descrie motivul primirii banului..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>3. De către cine ai fost banat?</label>
+                    <input type="text" id="ub_q3" class="form-control" required placeholder="Numele administratorului">
+                </div>
+                <div class="form-group">
+                    <label>4. Ai alte precizări sau dovezi?</label>
+                    <textarea id="ub_q4" class="form-control" placeholder="Link-uri dovadă (imgur, gyazo), explicații suplimentare..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary glow-button btn-full">
+                    <i class="fa-solid fa-unlock"></i> Trimite Cererea de Unban
+                </button>
+            </form>
+
+            <!-- UNBLACKLIST FORM -->
+            <form id="unblacklistForm" class="custom-form glass-card" style="display: none;">
+                <div class="block-title"><i class="fa-solid fa-shield-halved"></i> Formular Cerere Unblacklist</div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label>Nume Discord:</label>
+                        <input type="text" id="ubl_q1" class="form-control" required placeholder="Username-ul tău">
+                    </div>
+                    <div class="form-group">
+                        <label>ID Discord:</label>
+                        <input type="text" id="ubl_q2" class="form-control" required placeholder="Ex: 38219482910481920">
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label>Ce blacklist ai primit?</label>
+                        <input type="text" id="ubl_q3" class="form-control" required placeholder="Ex: Blacklist Staff / Blacklist Comunitate">
+                    </div>
+                    <div class="form-group">
+                        <label>Cine ți-a acordat blacklist-ul?</label>
+                        <input type="text" id="ubl_q4" class="form-control" required placeholder="Numele fondatorului / staff-ului">
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label>Motivul blacklist-ului:</label>
+                        <input type="text" id="ubl_q5" class="form-control" required placeholder="Motivul specificat">
+                    </div>
+                    <div class="form-group">
+                        <label>Data în care ai primit blacklist:</label>
+                        <input type="date" id="ubl_q6" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>De ce consideri că meriți unblacklist?</label>
+                    <textarea id="ubl_q7" class="form-control" required placeholder="Explică motivul pentru care dorești o a doua șansă..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Îți asumi greșeala pentru care ai primit blacklist?</label>
+                    <select id="ubl_q8" class="form-control" required>
+                        <option value="Da, îmi asum complet fapta">Da, îmi asum complet fapta</option>
+                        <option value="Nu">Nu</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Ce vei face diferit dacă vei primi unblacklist?</label>
+                    <textarea id="ubl_q9" class="form-control" required placeholder="Cum îți vei schimba comportamentul pe server..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Dovezi / dovezi suplimentare:</label>
+                    <input type="text" id="ubl_q10" class="form-control" placeholder="Link-uri imagini / video dovadă">
+                </div>
+
+                <div class="form-group">
+                    <label>Alte informații:</label>
+                    <textarea id="ubl_q11" class="form-control" placeholder="Alte detalii importante..."></textarea>
+                </div>
+
+                <div class="warning-box-custom">
+                    <strong>--- ATENȚIE:</strong><br>
+                    Prin trimiterea cererii confirmi că informațiile oferite sunt adevărate și că vei respecta decizia finală a staff-ului.
+                </div>
+
+                <button type="submit" class="btn-primary glow-button btn-full">
+                    <i class="fa-solid fa-shield-cat"></i> Trimite Cererea de Unblacklist
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 8. EVENIMENTE & ANUNȚURI -->
+    <section id="events" class="container">
+        <div class="section-header">
+            <h2>Evenimente <span class="brand-text">Următoare</span></h2>
+            <p>Nu rata activitățile pe care le pregătim!</p>
+        </div>
+        <div class="events-list">
+            <div class="event-card glass-card">
+                <div class="event-date">
+                    <span class="day">31</span>
+                    <span class="month">OCT</span>
+                </div>
+                <div class="event-info">
+                    <h3>Halloween Spooktacular Night</h3>
+                    <p>Concurs de costume pe Discord, povești de groază în chat-ul vocal și giveaway special de Nitro!</p>
+                </div>
+                <div class="event-status">În Curând</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section id="faq" class="container">
+        <div class="section-header">
+            <h2>Întrebări <span class="brand-text">Frecvente</span></h2>
+            <p>Răspunsuri la cele mai comune curiozități.</p>
+        </div>
+        <div class="faq-accordion">
+            <div class="faq-item glass-card">
+                <div class="faq-question" onclick="toggleFaq(this)">Cum pot primi un rol special pe server? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer"><p>Participă activ la conversații, urcă în nivel prin activitate sau participă la evenimentele comunității.</p></div>
+            </div>
+            <div class="faq-item glass-card">
+                <div class="faq-question" onclick="toggleFaq(this)">Cum pot deveni partener cu Arctic? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer"><p>Deschide un bilet pe canalul de #tickets de pe Discord și îndeplinește cerințele noastre de parteneriat.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL WEBHOOKS CONFIG (PROTEJAT CU PAROLĂ) -->
+    <div id="configModal" class="modal-overlay">
+        <div class="modal-box glass-card">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-lock" style="color: var(--ice-cyan);"></i> Administrare Webhooks</h3>
+                <button id="closeConfig" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div id="authStep">
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">
+                    Această zonă este restricționată. Introdu parola de fondator/administrator pentru a modifica setările.
+                </p>
+                <div class="form-group">
+                    <label>Parolă Acces:</label>
+                    <input type="password" id="adminPassInput" class="form-control" placeholder="••••••••">
+                </div>
+                <button onclick="checkAdminPassword()" class="btn-primary glow-button btn-full">
+                    <i class="fa-solid fa-key"></i> Autentificare
+                </button>
+            </div>
+
+            <div id="settingsStep" style="display: none;">
+                <div class="form-group">
+                    <label>URL Webhook Aplicații Staff:</label>
+                    <input type="text" id="wh_staff_input" class="form-control" placeholder="https://discord.com/api/webhooks/...">
+                </div>
+                <div class="form-group">
+                    <label>URL Webhook Unban & Unblacklist:</label>
+                    <input type="text" id="wh_unban_input" class="form-control" placeholder="https://discord.com/api/webhooks/...">
+                </div>
+                <button onclick="saveWebhooksSetting()" class="btn-primary glow-button btn-full">
+                    <i class="fa-solid fa-floppy-disk"></i> Salvează Setările Webhook
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-circle-check" style="color: var(--ice-cyan); font-size: 1.2rem;"></i>
+        <span id="toastMsg">Notificare!</span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="https://raw.githubusercontent.com/Alexandru2898/Logo-Website/fe83d5c9a5d7bcfa8a53c1a6120095128d19cfa7/C681F9A7-655D-4A7A-BFD3-E731340EFA37.png" alt="Arctic Logo">
+                <h3>ARCTIC</h3>
+                <p>Cea mai tare comunitate de Discord.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@d4rk_regele25" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/arctic.social.giveaways/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@Alexandru86-9" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ARCTIC. Toate drepturile rezervate. Neafiliat oficial cu Discord Inc.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
